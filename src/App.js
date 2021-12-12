@@ -8,41 +8,45 @@ import Posts from "./components/Posts";
 import Form from "./components/Form";
 import {Counter3} from "./components/Counter3";
 import './App.css'
+import Navbar from "./components/Navbar";
+import {BrowserRouter, Route} from 'react-router-dom';
+import {Routes} from 'react-router-dom'
 
 
 function App() {
   return (
-    <div className="container pt-3">
-        <div className="container_flexbox">
-            <Card>
-                <Form/>
-            </Card>
-            <Card>
-                <Counter3/>
-            </Card>
-            <Card>
-                <Counter1/>
-            </Card>
-            <Card>
-                <Counter2/>
-            </Card>
-        </div>
+      <>
+          <BrowserRouter>
+            <Navbar/>
 
+              <div className="container pt-3">
+                  <Routes>
+                      <Route
+                          path='/'
+                          render={() => <Form/>}
+                          exact
+                      />
+                      <Route component={Counter1} path={'/counter1'}/>
+                  </Routes>
+              </div>
 
-      <PostForm/>
+            <div className="container pt-3">
+              <PostForm/>
 
-      <div className="row">
-        <div className="col">
-          <h2>Посты:</h2>
-          <Posts/>
-        </div>
-        
-        <div className="col">
-          <h2>Асинхронные посты:</h2>
-          <FetchedPosts/>
-        </div>
-      </div>
-    </div>
+              <div className="row">
+                <div className="col">
+                  <h2>Посты:</h2>
+                  <Posts/>
+                </div>
+
+                <div className="col">
+                  <h2>Асинхронные посты:</h2>
+                  <FetchedPosts/>
+                </div>
+              </div>
+            </div>
+          </BrowserRouter>
+      </>
   );
 }
 

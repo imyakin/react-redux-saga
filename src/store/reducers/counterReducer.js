@@ -1,4 +1,4 @@
-import { DECREMENT, DECREMENT_2, INCREMENT, INCREMENT_2 } from "../types"
+import * as types from "../types"
 
 const initialState = {
     counter: 0,
@@ -6,16 +6,16 @@ const initialState = {
 }
 export const counterReducer = (state = initialState, action) => {
     switch(action.type){
-        case INCREMENT: {
+        case types.INCREMENT: {
             return {...state, counter: state.counter + 1}
         }
-        case DECREMENT: {
+        case types.DECREMENT: {
             return {...state, counter: state.counter - 1}
         }
-        case INCREMENT_2: {
+        case types.INCREMENT_2: {
             return {...state, counter2: state.counter2 + action.payload}
         }
-        case DECREMENT_2: {
+        case types.DECREMENT_2: {
             return {...state, counter2: state.counter2 - action.payload}
         }
         default: return state
