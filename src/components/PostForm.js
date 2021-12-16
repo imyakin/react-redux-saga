@@ -3,10 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { addPost, showAlert } from "../store/actions";
 import { Alert } from "./Alert";
 
-const PostForm = () => {
+const PostForm = ({subUser}) => {
     const [title, setTitle] = useState('')
     const alert = useSelector(state => state.app.alert)
-    console.log(alert)
     const dispatch = useDispatch()
 
    const submitHandler = event =>{
@@ -26,7 +25,9 @@ const PostForm = () => {
         <form onSubmit = {submitHandler}>
         {alert && <Alert text={alert}/>}
         <div className="mb-3 mt-3">
-            <label htmlFor="title" className="form-label">Напишите пост</label>
+            {subUser.length > 0 ? subUser.map(user => <label key={user.name} htmlFor="title" className="form-label">{user.name} {user.surname}, напишите пост</label>)
+                : <label htmlFor="title" className="form-label">Гость, напишите пост</label>}
+
             <input 
             type="text" 
             className="form-control" 

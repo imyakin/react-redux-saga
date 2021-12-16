@@ -1,40 +1,42 @@
-import React, {useRef, useState} from "react";
+import React, {useRef} from "react";
 
-const Form = () => {
-   const  [name, setName] = useState("");
-   const  [surname, setSurname] = useState("");
+const Form = ({handleAddToForm, handleSubmit}) => {
+
    const nameInputRef = useRef()
    const surnameInputRef = useRef()
 
     const handlerSurname = (e) => {
-       if(e.key === 'Enter'){
+       if(e.key === 'space'){
            surnameInputRef.current.focus()
        }
     }
     const handlerName = (e) => {
-       if(e.key === 'Enter'){
+       if(e.key === 'space'){
            nameInputRef.current.focus()
        }
     }
 
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <input
                 ref={nameInputRef}
                 type="text"
                 placeholder="Имя"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
+                name="firstname"
+                onChange={handleAddToForm}
                 onKeyUp={handlerSurname}
             />
             <input
+                className="mt-1"
                 ref={surnameInputRef}
                 type="text"
                 placeholder="Фамилия"
-                value={surname}
-                onChange={(e) => setSurname(e.target.value)}
+                name="lastname"
+                onChange={handleAddToForm}
                 onKeyUp={handlerName}
             />
+            <button type="submit" className="mt-2 btn btn-info ">Submit</button>
+            <button type="reset" className="mt-2 btn btn-danger">Reset</button>
         </form>
     )
 }

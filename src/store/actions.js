@@ -1,4 +1,15 @@
-import { DECREMENT, DECREMENT_2, INCREMENT, INCREMENT_2, ADD_POST, FETCH_POST, SHOW_LOADER, HIDE_LOADER, SHOW_ALERT, HIDE_ALERT, REQUEST_POST } from "./types";
+import {
+    ADD_POST,
+    DECREMENT,
+    DECREMENT_2,
+    HIDE_ALERT,
+    HIDE_LOADER,
+    INCREMENT,
+    INCREMENT_2,
+    REQUEST_POST,
+    SHOW_ALERT,
+    SHOW_LOADER
+} from "./types";
 
 export function increment(){
     return ({

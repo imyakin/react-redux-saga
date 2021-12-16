@@ -1,6 +1,4 @@
 import React, {useEffect, useRef, useState} from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { decrement, increment } from "../store/actions";
 
 export const Counter3 = () => {
     const [counter, setCounter] = useState()
