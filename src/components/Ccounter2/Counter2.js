@@ -1,9 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { increment2, decrement2 } from "../store/actions";
-
-
-
+import {decrement2, increment2} from "../../store/counters/actions";
 
 const Counter2 = ({counter2, increment, decrement}) => {
     return (

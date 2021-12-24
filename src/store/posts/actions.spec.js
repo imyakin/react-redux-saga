@@ -1,5 +1,5 @@
 import { decrement2, increment2 } from "./actions";
-import { DECREMENT_2, INCREMENT_2 } from "./types";
+import { DECREMENT_2, INCREMENT_2 } from "../types";
 
 
 describe('Action --- Test calculator', ()=>{

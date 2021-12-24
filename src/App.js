@@ -1,15 +1,16 @@
 import React, {useState} from "react";
 import {Card} from "./components/Card/Card";
-import {Counter1} from "./components/Counter1";
-import Counter2 from "./components/Counter2"
-import FetchedPosts from "./components/FetchedPosts";
-import PostForm from "./components/PostForm";
-import Posts from "./components/Posts";
-import Form from "./components/Form";
-import {Counter3} from "./components/Counter3";
+import {Counter1} from "./components/Counter1/Counter1";
+import Counter2 from "./components/Ccounter2/Counter2"
+import FetchedPosts from "./components/FetchedPosts/FetchedPosts";
+import PostForm from "./components/PostForm/PostForm";
+import Posts from "./components/Posts/Posts";
+import Form from "./components/Form/Form";
+import {Counter3} from "./components/Counter3/Counter3";
 import './App.css'
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar/Navbar";
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import EmployeeList from "./components/EmployeeList/EmployeeList";
 
 
 function App() {
@@ -81,6 +82,11 @@ function App() {
                   <h2>Асинхронные посты:</h2>
                   <FetchedPosts/>
                 </div>
+
+              <div className="col">
+                  <h2>Сотрудники:</h2>
+                  <EmployeeList/>
+              </div>
               </div>
             </div>
           </BrowserRouter>

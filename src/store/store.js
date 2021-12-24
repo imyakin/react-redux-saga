@@ -1,8 +1,8 @@
 import { applyMiddleware, compose, createStore } from "redux";
 import thunk from "redux-thunk";
-import { rootReducer } from "./reducers/rootReducer";
+import { rootReducer } from "./rootreducer/rootReducer";
 import createSagaMiddleware from 'redux-saga'
-import { sagaWatcher } from "./sagas";
+import { sagaWatcher } from "./posts/sagas";
 
 const saga = createSagaMiddleware()
 

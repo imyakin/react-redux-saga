@@ -1,13 +1,14 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchedPosts } from "../store/actions";
-import { Loader } from "./Loader";
-import { PostItem } from "./PostItem";
+import { fetchedPosts } from "../../store/posts/actions";
+import { Loader } from "../Loader/Loader";
+import { PostItem } from "../PostItem/PostItem";
+import {selectLoadind} from "../../store/app/selector";
 
 const FetchedPosts = () => {
     const dispatch = useDispatch()
     const posts = useSelector(state => state.posts.fetchedPosts)
-    const loading = useSelector(state => state.app.loading)
+    const loading = useSelector(selectLoadind)
 
     if(loading){
         return <Loader/>

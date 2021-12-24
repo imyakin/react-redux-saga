@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addPost, showAlert } from "../store/actions";
-import { Alert } from "./Alert";
+import { addPost } from "../../store/posts/actions";
+import { Alert } from "../Alert/Alert";
+import {selectAlert} from "../../store/app/selector";
 
 const PostForm = ({subUser}) => {
     const [title, setTitle] = useState('')
-    const alert = useSelector(state => state.app.alert)
+    const alert = useSelector(selectAlert)
     const dispatch = useDispatch()
 
    const submitHandler = event =>{
